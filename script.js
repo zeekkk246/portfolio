@@ -49,27 +49,7 @@ if (lbClose) lbClose.addEventListener('click', () => {
   lightbox.setAttribute('aria-hidden','true');
 });
 
-// Contact form fallback -> opens mail client with prefilled message
-const contactForm = document.getElementById('contactForm');
-const formResult = document.getElementById('formResult');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('cf-name').value.trim();
-    const email = document.getElementById('cf-email').value.trim();
-    const subject = document.getElementById('cf-subject').value.trim() || 'Contact from portfolio';
-    const message = document.getElementById('cf-message').value.trim();
 
-    if (!name || !email || !message) {
-      formResult.textContent = 'Please fill name, email and message.';
-      return;
-    }
-
-    const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
-    window.location.href = `mailto:purwanazaky1369@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    formResult.textContent = 'Opening email client...';
-  });
-}
 
 // Scrollspy: highlight nav indicator under active link
 const navLinks = Array.from(document.querySelectorAll('.nav-link'));
@@ -107,3 +87,4 @@ document.addEventListener('keydown', (e) => {
     lightbox.style.display = 'none';
   }
 });
+

@@ -28,7 +28,6 @@
         <a href="#about" class="nav-link" data-target="about">About Me</a>
         <a href="#projects" class="nav-link" data-target="projects">Projects</a>
         <a href="#skills" class="nav-link" data-target="skills">Skills</a>
-        <a href="#experience" class="nav-link" data-target="experience">Experience</a>
         <a href="#contact" class="nav-link" data-target="contact">Contact</a>
         <a class="btn primary" id="downloadCv" href="CV.pdf" download>Download CV</a>
         <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
@@ -48,10 +47,12 @@
           <p class="subtitle">Student at President University — Project manager, designer, and multimedia enthusiast.</p>
 
           <div class="profile-actions">
-            <a class="btn outline" href="mailto:purwanazaky1369@gmail.com">Email</a>
-            <a class="btn" href="https://wa.me/6289613187896" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn ghost" href="https://instagram.com/z_purwana" target="_blank" rel="noopener">@z_purwana</a>
-          </div>
+          <a href="mailto:purwanazaky1369@gmail.com" class="contact-pill">Email</a>
+          <a href="https://wa.me/6289613187896" target="_blank" class="contact-pill">WhatsApp</a>
+          <a href="https://instagram.com/z_purwana" target="_blank" class="contact-pill">@z_purwana</a>
+        </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
         </div>
 
         <div class="card info-card fade-in delay-1">
@@ -83,7 +84,7 @@
 
         <div class="projects-grid">
           <article class="project-card fade-in delay-1">
-            <h3>Food Connect — Vice Project Manager</h3>
+            <h3>Food Connect — Front End</h3>
             <p class="meta">Dec 2025 — Present</p>
             <p>1. Convenient Ordering
                  Food Connect allows dorm residents to order food from the canteen without walking there—everything is accessible through the website or app.<p>
@@ -111,15 +112,22 @@
           <article class="project-card fade-in delay-3">
             <h3>Career Pods Explorer — Vice Project Manager</h3>
             <p class="meta">Sep 2025 — Present</p>
-            <p>Coordinates team tasks, monitors daily progress, maintains deliverable quality, and resolves operational issues while supporting project planning and communications.</p>
-          </article>
+            <p>1. Mission:
+               To assist President University students in developing their careers, enhancing skills, and achieving their professional goals through comprehensive support.</p>
+            <p>2. Development & Guidance:
+               Offers resources (articles, videos, webinars), skill tracking, personalized learning paths, and career event information.</p>
+               3. Development & Guidance: 
+               Offers resources (articles, videos, webinars), skill tracking, personalized learning paths, and career event information.</p>
+               4. Outcome: 
+               The platform functions to advance careers, improve students' specific competencies, and forge strong professional networks with the relevant industry.</p>
+            </article>
         </div>
 
         <!-- optional gallery -->
         <div class="gallery-grid fade-in delay-4" id="gallery">
-          <button class="gallery-item" data-img="gambarConnectFood.png"><img src="gambarConnectFood.png" alt="Project 1"></button>
-          <button class="gallery-item" data-img="https://via.placeholder.com/800x500?text=Project+2"><img src="https://via.placeholder.com/400x250?text=Project+2" alt="Project 2"></button>
-          <button class="gallery-item" data-img="https://via.placeholder.com/800x500?text=Project+3"><img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3"></button>
+          <button class="gallery-item" data-img="gambarConnectFood.png">  <img src="gambarConnectFood.png" alt="Project 1"></button>
+          <button class="gallery-item" data-img="zstudio.png">            <img src="zstudio.png"           alt="Project 2"></button>
+          <button class="gallery-item" data-img="CareerPods.png">         <img src="CareerPods.png"        alt="Project 3"></button>
         </div>
       </div>
     </section>
@@ -135,9 +143,11 @@
             <ul>
               <li>HTML / CSS</li>
               <li>JavaScript</li>
-              <li>UI/UX Design (Figma)</li>
+              <li>UI/UX Design</li>
               <li>Adobe Illustrator</li>
-              <li>Video Editing (CapCut)</li>
+              <li>Video Editing</li>
+              <li>Git%GitHub</li>
+              <li>Responsive Web Design</li>
             </ul>
           </div>
 
@@ -149,6 +159,7 @@
               <li>Time Management</li>
               <li>Communication</li>
               <li>Problem Solving</li>
+              <li>Adaptability</li>
             </ul>
           </div>
 
@@ -159,6 +170,8 @@
               <li>Figma</li>
               <li>Microsoft Excel</li>
               <li>Basic Node / Git</li>
+              <li>VS Code</li>
+              <li>Chrome DevTools</li>
             </ul>
           </div>
         </div>
@@ -172,20 +185,28 @@
         <div class="card contact-card">
           <h2>Contact</h2>
           <p><strong>Email</strong><br><a href="mailto:purwanazaky1369@gmail.com">purwanazaky1369@gmail.com</a></p>
-          <p><strong>WhatsApp</strong><br><a href="https://wa.me/6289613187896" target="_blank">0896-131-87896</a></p>
+          <p><strong>WhatsApp</strong><br><a href="https://wa.me/6289613187896" target="_blank">0896-1318-7896</a></p>
           <p><strong>Instagram</strong><br><a href="https://instagram.com/z_purwana" target="_blank">@z_purwana</a></p>
           <p><strong>LinkedIn</strong><br><a href="https://linkedin.com/in/zaky-purwana" target="_blank">linkedin.com/in/zaky-purwana</a></p>
 
           <hr>
 
           <h3>Send a message</h3>
-          <form id="contactForm" class="contact-form">
+          <form  
+           action="https://formsubmit.co/purwanazaky1369@gmail.com"
+           method="POST"
+           id="contactForm"
+           class="contact-form"
+>
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://your-website.com/thankyou.html">
+
             <input type="text" id="cf-name" name="name" placeholder="Your name" required>
             <input type="email" id="cf-email" name="email" placeholder="Your email" required>
             <input type="text" id="cf-subject" name="subject" placeholder="Subject">
             <textarea id="cf-message" name="message" rows="5" placeholder="Message" required></textarea>
             <div class="form-actions">
-              <button type="submit" class="btn primary">Send (opens email)</button>
+              <button type="submit" class="btn primary">Send</button>
               <button type="reset" class="btn outline">Clear</button>
             </div>
             <p id="formResult" class="muted"></p>
@@ -193,15 +214,22 @@
         </div>
 
         <div class="card map-card">
-          <h3>Quick Links</h3>
-          <ul class="quick-links">
-            <li><a href="CV.pdf" download>Download CV (PDF)</a></li>
-            <li><a href="#projects">See Projects</a></li>
-            <li><a href="#skills">See Skills</a></li>
-          </ul>
+  <div class="video-card">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      disablepictureinpicture
+      preload="none"
+      class="showcase-video">
+      
+      <source src="assets/video/loop.mp4" type="video/mp4">
+    </video>
+  </div>
 
-          <div class="small-note muted">Location: Jababeka City, Indonesia</div>
-        </div>
+  <div class="small-note muted">Location: Jababeka City, Indonesia</div>
+</div>
       </div>
     </section>
 
