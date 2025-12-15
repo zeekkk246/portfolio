@@ -5,7 +5,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     const id = link.getAttribute('href') || ('#' + link.dataset.target);
     const target = document.querySelector(id);
     if (target) {
-      target.scrollIntoView({behavior:'smooth', block:'start'});
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
@@ -41,12 +41,12 @@ document.querySelectorAll('.gallery-item').forEach(btn => {
     const src = btn.dataset.img;
     lbImage.src = src;
     lightbox.style.display = 'flex';
-    lightbox.setAttribute('aria-hidden','false');
+    lightbox.setAttribute('aria-hidden', 'false');
   });
 });
 if (lbClose) lbClose.addEventListener('click', () => {
   lightbox.style.display = 'none';
-  lightbox.setAttribute('aria-hidden','true');
+  lightbox.setAttribute('aria-hidden', 'true');
 });
 
 
@@ -55,8 +55,8 @@ if (lbClose) lbClose.addEventListener('click', () => {
 const navLinks = Array.from(document.querySelectorAll('.nav-link'));
 const sections = navLinks.map(link => {
   const href = link.getAttribute('href');
-  return {link, el: document.querySelector(href)};
-}).filter(i=>i.el);
+  return { link, el: document.querySelector(href) };
+}).filter(i => i.el);
 
 function updateActive() {
   const scrollPos = window.scrollY + window.innerHeight / 3;
@@ -65,7 +65,7 @@ function updateActive() {
     if (s.el.offsetTop <= scrollPos) current = s;
   });
   // highlight current link
-  navLinks.forEach(l=> l.classList.remove('active'));
+  navLinks.forEach(l => l.classList.remove('active'));
   if (current && current.link) current.link.classList.add('active');
 
   // move navIndicator if exists
@@ -88,3 +88,53 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+
+// Floating Code Background Logic
+const codeSnippets = [
+  'console.log("Hello World");',
+  'function init() { return true; }',
+  'const x = 10;',
+  '<div></div>',
+  'import React from "react";',
+  'npm install',
+  'git push origin main',
+  'if (err) throw err;',
+  'return null;',
+  'await fetch(url);',
+  'class App extends Component',
+  'while(true) { coding(); }',
+  'const styles = StyleSheet.create({});'
+];
+
+function createCodeLine() {
+  const bg = document.getElementById('code-background');
+  if (!bg) return;
+
+  const el = document.createElement('div');
+  el.classList.add('code-line-item');
+  el.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+
+  // Random position and duration
+  el.style.left = Math.random() * 95 + 'vw';
+  el.style.animationDuration = (Math.random() * 10 + 10) + 's'; // 10-20s
+  el.style.fontSize = (Math.random() * 10 + 10) + 'px'; // 10-20px
+  el.style.opacity = (Math.random() * 0.3 + 0.1);
+
+  bg.appendChild(el);
+
+  // Remove after animation
+  setTimeout(() => {
+    el.remove();
+  }, 22000);
+}
+
+// Spawn periodically
+setInterval(createCodeLine, 800);
+// Fungsi untuk membuka Modal
+function openModal(imageSrc) {
+    // PENTING: Gunakan display = "flex" agar Flexbox di CSS berfungsi
+    var modal = document.getElementById("myModal");
+    modal.style.display = "flex"; 
+    
+    // ... sisa kode lainnya ...
+}
